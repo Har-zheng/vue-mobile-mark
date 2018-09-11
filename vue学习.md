@@ -388,9 +388,24 @@ Vue.prototype.bus = new Vue();  //  给Vue实例 绑定 Bus模式
 ###### 6-1.git和码云的使用
 
 ####  生成/添加ssh公钥
++   命令行  
 +   生成 sshkey  ssh-keygen -t rsa -C "xxxxx@xxxxx.com"  回车三次完成生成  ssh key 
 
 +   获取到你的 public key  &nbsp; &nbsp; &nbsp; &nbsp;cat ~/.ssh/id_rsa.pub
+####  vue项目代码结构介绍
+
+
+####  单文件组件与Vue中的路由
+
+####  多页应用件VS单页应用
++   多页应用 页面跳转 
++   优点：首屏时间块，seo效果好
++   缺点：页面切换慢
+<br>
++ 单页应用
++ 优点：页面切换块
++ 缺点：首屏的时间稍慢，seo差
+
 
 
 
