@@ -405,6 +405,8 @@ Vue.prototype.bus = new Vue();  //  给Vue实例 绑定 Bus模式
 + 单页应用
 + 优点：页面切换块
 + 缺点：首屏的时间稍慢，seo差
+#### 首页header区域开发
+
 
 
 

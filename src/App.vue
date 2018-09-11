@@ -23,5 +23,3 @@
     &.router-link-exact-active
       color #42b983
 </style>
-
-// 路由就是根据网址的不同，返回不同的内容给用户
