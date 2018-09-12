@@ -407,7 +407,7 @@ Vue.prototype.bus = new Vue();  //  给Vue实例 绑定 Bus模式
 + 缺点：首屏的时间稍慢，seo差
 #### 首页header区域开发
 
-
+#### 推荐组件开发
 
   + git pull 更新
   + git checkout 分支名 //切换到分支

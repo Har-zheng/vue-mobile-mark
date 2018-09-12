@@ -9,7 +9,7 @@
                     id: '002',
                     imgUrl 'http://img1.qunarzz.com/qs/1809/f6/18a4edd3d78d1102.jpg'
                 }] -->
-        <swiper-slide v-for="item of swiperList">
+        <swiper-slide  v-for=" (item, index) of swiperList" :key="index">
             <img class="swiper-img" :src="item.imgUrl" :key="item.id"/>
         </swiper-slide>
         <!-- Optional controls -->
