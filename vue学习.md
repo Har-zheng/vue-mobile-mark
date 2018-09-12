@@ -409,6 +409,8 @@ Vue.prototype.bus = new Vue();  //  给Vue实例 绑定 Bus模式
 
 
 
+  + git pull 更新
+  + git checkout 分支名
 
 
 
