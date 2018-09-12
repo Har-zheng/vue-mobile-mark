@@ -410,7 +410,10 @@ Vue.prototype.bus = new Vue();  //  给Vue实例 绑定 Bus模式
 
 
   + git pull 更新
-  + git checkout 分支名
+  + git checkout 分支名 //切换到分支
+  + git checkout  master 切换到主枝干
+  + git merge origin/index-swiper  新增的内容分支合并到本地分支
+  + 
 
 
 
