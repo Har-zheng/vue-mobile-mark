@@ -393,6 +393,9 @@ Vue.prototype.bus = new Vue();  //  给Vue实例 绑定 Bus模式
 
 +   获取到你的 public key  &nbsp; &nbsp; &nbsp; &nbsp;cat ~/.ssh/id_rsa.pub
 ####  vue项目代码结构介绍
+#### Vue cli3 入门
++   安装  npm install -g @vue/cli 或者  yarn global add @vue/cli
++   创建项目  vue create my-project or vue ui
 
 
 ####  单文件组件与Vue中的路由
@@ -439,12 +442,16 @@ Vue.prototype.bus = new Vue();  //  给Vue实例 绑定 Bus模式
     }
 ```
 #### 首页父子组件数据传递
+#### 城市选择页面路由配置
+#### 搜索框布局
 
   + git pull 更新
   + git checkout 分支名 //切换到分支
   + git checkout  master 切换到主枝干
   + git merge origin/index-swiper  新增的内容分支合并到本地分支 //注意合并之前先 push到云端  不易造成混乱
-  + 
+
+
+
 
 
 

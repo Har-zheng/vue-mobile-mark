@@ -10,8 +10,14 @@ export default new Router({
   routes: [
     {
       path: "/",
-      name: "home",
+      name: "Home",
       component: Home
+    },
+    {
+      path: '/city',
+      name: 'City',
+      component: () =>
+      import("./pages/city/City.vue")
     }
   ]
 });
