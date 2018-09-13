@@ -408,6 +408,7 @@ Vue.prototype.bus = new Vue();  //  给Vue实例 绑定 Bus模式
 #### 首页header区域开发
 
 #### 推荐组件开发
+#### 周末游组件开发
 
   + git pull 更新
   + git checkout 分支名 //切换到分支
