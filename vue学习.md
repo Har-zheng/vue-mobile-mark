@@ -409,11 +409,41 @@ Vue.prototype.bus = new Vue();  //  给Vue实例 绑定 Bus模式
 
 #### 推荐组件开发
 #### 周末游组件开发
+#### axios  vue官方推荐的请求数据的框架 
+```javascript
+   //  npm install axios 
+   //支持链式操作
+   axios.get('/user?ID=12345')
+  .then(function (response) { // .then 请求成功时的操作   执行成功函数
+    console.log(response);
+  })
+  .catch(function (error) { // .catch 请求失败后的操作 函数 
+    console.log(error);
+  });
+
+```
+#### 关于vue cli3 的本地数据模拟
+1,在根目录下创建  vue-config.js 文件 
+```javascript
+    const mockdata = require('./static/mock/index.json'); // 导入静态文件  及模拟的数据
+
+    module.exports={ // 导出  外界能够访问
+        devServer: {
+            port:8080,  //启动的端口这里是改动后的   未改动前默认 8080
+            before(app){
+                app.get('/static/mock',(req,res,next)=>{ //  匹配访问地址   这里是基于Node.js  app  express框架 
+                    res.json(mockdata); // 响应请求 输出 传递
+                })
+            }
+        }
+    }
+```
+#### 首页父子组件数据传递
 
   + git pull 更新
   + git checkout 分支名 //切换到分支
   + git checkout  master 切换到主枝干
-  + git merge origin/index-swiper  新增的内容分支合并到本地分支
+  + git merge origin/index-swiper  新增的内容分支合并到本地分支 //注意合并之前先 push到云端  不易造成混乱
   + 
 
 
