@@ -24,18 +24,18 @@
             <div class="title border-topbottom">热门城市</div>
             <div class="button-list">
                 <div class="button-wrapper" v-for="(item, index) of hot" :key="index" >
-                    <div class="button"> {{ item }} </div> 
+                    <div class="button"> {{ item.name }} </div> 
                 </div> 
             </div>
         </div>
         <div class="area"
-         v-for="(itcities,index) of cities" 
-         :key="index" 
-         :ref="itcities.title"
+         v-for="(itcities,key) of cities" 
+         :key="key" 
+         :ref="itcities.name"
          >
-            <div class="title border-topbottom">{{ itcities.title }}</div>
+            <div class="title border-topbottom">{{ key }}</div>
             <div class="item-list">
-                    <div class="item bordet-bottom " v-for="(itcity,index) of itcities.lists" :key="index"> {{ itcity }}</div>
+                    <div class="item bordet-bottom" v-for="(item,index) of itcities" :key="index"> {{ item.name }}</div>
                 </div> 
         </div>
        </div>
@@ -47,7 +47,7 @@
         name: "CityList",
         props: {
             hot: Array,
-            cities: Array,
+            cities: Object,
             letter: String
             },
         mounted() {
