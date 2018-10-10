@@ -1,9 +1,6 @@
 <template>
 <div>
     <ul class="list">
-<<<<<<< HEAD
-        <li class="item" v-for="(items, index) of cities" :key="index">{{ items.title }}</li>
-=======
         <li class="item"
         v-for="(items, key) of cities"
         :key="key"
@@ -13,7 +10,6 @@
         @touchend = "handleTouchEnd"
         @click="handleLetterClick"
            >{{ items.title }}</li>
->>>>>>> city-components
     </ul>
 </div>
 
@@ -23,8 +19,6 @@
         name: "CityAlphabet",
         props: {
             cities: Array
-<<<<<<< HEAD
-=======
         },
         computed: {
             // letters() {
@@ -63,7 +57,6 @@
             handleTouchEnd () {
                 this.touchStatus = false
             }
->>>>>>> city-components
         }
     }
 </script>

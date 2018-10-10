@@ -28,15 +28,11 @@
                 </div> 
             </div>
         </div>
-<<<<<<< HEAD
-        <div class="area" v-for="(itcities,index) of cities" :key="index">
-=======
         <div class="area"
          v-for="(itcities,index) of cities" 
          :key="index" 
          :ref="itcities.title"
          >
->>>>>>> city-components
             <div class="title border-topbottom">{{ itcities.title }}</div>
             <div class="item-list">
                     <div class="item bordet-bottom " v-for="(itcity,index) of itcities.lists" :key="index"> {{ itcity }}</div>

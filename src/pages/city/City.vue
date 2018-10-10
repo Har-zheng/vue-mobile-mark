@@ -8,14 +8,10 @@
         :letter="letter"
         @change="handleLetterChange"
         ></city-list>
-<<<<<<< HEAD
-        <city-alphabet :cities="cities"></city-alphabet>
-=======
         <city-alphabet 
         :cities="cities"
         @change="handleLetterChange"
         ></city-alphabet>
->>>>>>> city-components
     </div>
 </template>
 <script>
