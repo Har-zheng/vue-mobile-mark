@@ -31,7 +31,7 @@ import CityAlphabet from './components/Alphabet'
         },
         data (){
             return{
-                cities:[],
+                cities:{},
                 hotCities:[],
                 letter: null
             }

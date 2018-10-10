@@ -4,12 +4,12 @@
         <li class="item"
         v-for="(items, key) of cities"
         :key="key"
-        :ref="items.title"
+        :ref="items"
         @touchstart="handleTouchStart"
         @touchmove = "handleTouchMove"
         @touchend = "handleTouchEnd"
         @click="handleLetterClick"
-           >{{ items.title }}</li>
+           >{{ items.name }}</li>
     </ul>
 </div>
 
@@ -18,7 +18,7 @@
     export default {
         name: "CityAlphabet",
         props: {
-            cities: Array
+            cities: Object
         },
         computed: {
             // letters() {
