@@ -51,12 +51,8 @@ import CityAlphabet from './components/Alphabet'
                }
             },
             handleLetterChange (letter) {
-<<<<<<< HEAD
-                this.letter = letter
-=======
                 this.letter = letter;
                 console.log(this.letter)
->>>>>>> city-components
             }
         },
         mounted () {
