@@ -28,7 +28,15 @@
                 </div> 
             </div>
         </div>
+<<<<<<< HEAD
         <div class="area" v-for="(itcities,index) of cities" :key="index">
+=======
+        <div class="area"
+         v-for="(itcities,index) of cities" 
+         :key="index" 
+         :ref="itcities.title"
+         >
+>>>>>>> city-components
             <div class="title border-topbottom">{{ itcities.title }}</div>
             <div class="item-list">
                     <div class="item bordet-bottom " v-for="(itcity,index) of itcities.lists" :key="index"> {{ itcity }}</div>
@@ -50,6 +58,14 @@
             // var wrapper = document.querySelector('.list')
             // let scroll = new Bscroll(wrapper)
             this.scroll = new Bscroll(this.$refs.wrapper)
+        },
+        watch: {
+            letter () {
+                if (this.letter) {
+                    const element = this.$refs[this.letter][0];
+                    this.scroll.scrollToElement(element);
+                }
+            }
         }
     }
 </script>

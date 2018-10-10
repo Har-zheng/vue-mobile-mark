@@ -8,7 +8,14 @@
         :letter="letter"
         @change="handleLetterChange"
         ></city-list>
+<<<<<<< HEAD
         <city-alphabet :cities="cities"></city-alphabet>
+=======
+        <city-alphabet 
+        :cities="cities"
+        @change="handleLetterChange"
+        ></city-alphabet>
+>>>>>>> city-components
     </div>
 </template>
 <script>
@@ -48,7 +55,12 @@ import CityAlphabet from './components/Alphabet'
                }
             },
             handleLetterChange (letter) {
+<<<<<<< HEAD
                 this.letter = letter
+=======
+                this.letter = letter;
+                console.log(this.letter)
+>>>>>>> city-components
             }
         },
         mounted () {

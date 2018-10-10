@@ -1,7 +1,19 @@
 <template>
 <div>
     <ul class="list">
+<<<<<<< HEAD
         <li class="item" v-for="(items, index) of cities" :key="index">{{ items.title }}</li>
+=======
+        <li class="item"
+        v-for="(items, key) of cities"
+        :key="key"
+        :ref="items.title"
+        @touchstart="handleTouchStart"
+        @touchmove = "handleTouchMove"
+        @touchend = "handleTouchEnd"
+        @click="handleLetterClick"
+           >{{ items.title }}</li>
+>>>>>>> city-components
     </ul>
 </div>
 
@@ -11,6 +23,47 @@
         name: "CityAlphabet",
         props: {
             cities: Array
+<<<<<<< HEAD
+=======
+        },
+        computed: {
+            // letters() {
+            //     const letters = [];
+            // }
+        },
+        data (){
+            return {
+                touchStatus: false,
+                startY: 0,
+                timer: null
+            }
+        },
+        methods: {
+            handleLetterClick (e) {
+                this.$emit('change', e.target.innerText);
+            },
+            handleTouchStart () {
+                this.touchStatus = true
+            },
+            handleTouchMove (e) {
+                if( this.touchStatus = true ){
+                    if (this.timer){
+                        clearTimeout(this.timer)
+                    }
+                    this.timer = setTimeout(()=> {
+                        const startY = this.$refs['A'][0].offsetTop;
+                        const touchY = e.touches[0].clientY - 79;
+                        const index = Math.floor((touchY-startY) / 20);
+                        if( index >= 0 && index < this.cities.length) {
+                            this.$emit('change', this.cities[index].title);
+                        }
+                    }, 16);
+                }
+            },
+            handleTouchEnd () {
+                this.touchStatus = false
+            }
+>>>>>>> city-components
         }
     }
 </script>
