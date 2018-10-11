@@ -2,16 +2,19 @@
     <div class="recommend">
         <div class="title">热销推荐</div>
         <ul>
-            <li class="item border-bottom" v-for="(item, index) of list" :key="index">
-                    <img class="item-img" :src="item.imgUrl" />
+            <router-link tag="li" 
+              class="item border-bottom"
+               v-for="(item, index) of list" :key="index"
+               :to="'/detail/'+ item.id"
+               >
+                <img class="item-img" :src="item.imgUrl" />
                 <div class="item-info">
                     <p class="ietm-title">{{ item.title }}</p>
                     <p class="item-desc"><span class="mp-comment-num">{{ item.desc }}</span></p>
                     <p class="item-desc"><span class="mp-comment-num">￥59.9</span> <span>朝阳区</span></p>
                     <button class="item-button">查看详情</button>
                 </div>
-
-            </li>
+            </router-link>
         </ul>
     </div>
 </template>

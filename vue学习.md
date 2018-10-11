@@ -451,6 +451,9 @@ Vue.prototype.bus = new Vue();  //  给Vue实例 绑定 Bus模式
 
 #### 使用keep-alive优化网页性能
 
+#### 详情页动态路由及banner布局
+
+
   + git pull 更新
   + git checkout 分支名 //切换到分支
   + git checkout  master 切换到主枝干
