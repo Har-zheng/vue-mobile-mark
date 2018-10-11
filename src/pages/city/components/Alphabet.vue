@@ -39,6 +39,7 @@
         methods: {
             handleLetterClick (e) {
                 this.$emit('change', e.target.innerText);
+                console.log('click')
             },
             handleTouchStart () {
                 this.touchStatus = true

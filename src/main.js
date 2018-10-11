@@ -1,8 +1,8 @@
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
-import store from "./store";
 import VueAwesomeSwiper from 'vue-awesome-swiper';
+import store from './store/index'
 import "./registerServiceWorker";
 import "./assets/styles/reset.css"
 import "./assets/styles/border.css"

@@ -6,7 +6,10 @@
     <div class="search-content" ref="search" v-show="keyword">
         <ul>
             <li class="search-item border-bottom" 
-            v-for="item of list" :key="item.id">
+            v-for="item of list"
+            :key="item.id"
+            @click="handleCityClick( item.name )"
+            >
                 {{ item.name }}
             </li>
             <li class="search-item border-bottom" v-show="!list.length">
@@ -18,6 +21,7 @@
 </template>
 <script>
 import Bscroll from 'better-scroll'
+import { mapState,mapMutations } from 'vuex'
     export default {
         name: "CitySearch",
         props: {
@@ -29,6 +33,14 @@ import Bscroll from 'better-scroll'
                 list: [],
                 timer: null
             }
+        },
+        methods: {
+            handleCityClick: function (city) {
+                // this.$store.commit('changeCity', city); 简化  处理方式
+                this.changeCity(city)
+                this.$router.push('/')
+            },
+            ...mapMutations(['changeCity'])
         },
         computed: {
             hasNoData () {
@@ -60,7 +72,7 @@ import Bscroll from 'better-scroll'
             }
         },
         mounted() {
-            this.scroll = new Bscroll(this.$refs.search);
+            this.scroll = new Bscroll(this.$refs.search,{ mouseWheel: true, click: true, tap: true });
             console.log(this.$refs.search);
         }
     }
