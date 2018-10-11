@@ -2,14 +2,14 @@
 <div>
     <ul class="list">
         <li class="item"
-        v-for="(items, key) of cities"
-        :key="key"
+        v-for="items in alphaList"
+        :key="items"
         :ref="items"
         @touchstart="handleTouchStart"
         @touchmove = "handleTouchMove"
         @touchend = "handleTouchEnd"
         @click="handleLetterClick"
-           >{{ items.name }}</li>
+           >{{ items }}</li>
     </ul>
 </div>
 
@@ -21,9 +21,13 @@
             cities: Object
         },
         computed: {
-            // letters() {
-            //     const letters = [];
-            // }
+            alphaList () {
+                const alphaList = [];
+                for(let item in this.cities){ //读属性
+                    alphaList.push(item);
+                }
+                return alphaList; //将cities 变成一个数组
+            }
         },
         data (){
             return {
@@ -48,8 +52,8 @@
                         const startY = this.$refs['A'][0].offsetTop;
                         const touchY = e.touches[0].clientY - 79;
                         const index = Math.floor((touchY-startY) / 20);
-                        if( index >= 0 && index < this.cities.length) {
-                            this.$emit('change', this.cities[index].title);
+                        if( index >= 0 && index < this.alphaList.length) {
+                            this.$emit('change', this.alphaList[index]);
                         }
                     }, 16);
                 }
