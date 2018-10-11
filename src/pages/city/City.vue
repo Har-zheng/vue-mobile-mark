@@ -10,6 +10,7 @@
         ></city-list>
         <city-alphabet 
         :cities="cities"
+        :letter="letter"
         @change="handleLetterChange"
         ></city-alphabet>
     </div>
@@ -52,7 +53,7 @@ import CityAlphabet from './components/Alphabet'
             },
             handleLetterChange (letter) {
                 this.letter = letter;
-                console.log(this.letter)
+                console.log(this.letter);
             }
         },
         mounted () {

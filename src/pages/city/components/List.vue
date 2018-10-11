@@ -31,11 +31,11 @@
         <div class="area"
          v-for="(itcities,key) of cities" 
          :key="key" 
-         :ref="itcities.name"
+         :ref="key"
          >
             <div class="title border-topbottom">{{ key }}</div>
             <div class="item-list">
-                    <div class="item bordet-bottom" v-for="(item,index) of itcities" :key="index"> {{ item.name }}</div>
+                    <div class="item bordet-bottom" v-for="arrayItem in itcities" :key="arrayItem.id"> {{ arrayItem.name }}</div>
                 </div> 
         </div>
        </div>
@@ -51,8 +51,6 @@
             letter: String
             },
         mounted() {
-            // var wrapper = document.querySelector('.list')
-            // let scroll = new Bscroll(wrapper)
             this.scroll = new Bscroll(this.$refs.wrapper)
         },
         watch: {
