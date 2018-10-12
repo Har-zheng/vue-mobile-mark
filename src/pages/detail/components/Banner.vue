@@ -1,15 +1,23 @@
 <template>
-    <div class="banner">
+<div>   
+  <div class="banner">
         <img class="banner-img" src="http://img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_600x330_8572a930.jpg" alt="">
         <div class="banner-info">
             <div class="banner-title">上海迪士尼乐园</div>
             <div class="banner-number banner-icon"><span class="iconfont">&#xe631;</span>视屏</div>
         </div>
     </div>
+    <common-gallary></common-gallary>
+</div>
+  
 </template>
 <script>
+import CommonGallary from '../../../common/gallary/Gallary'
     export default {
-        name: 'Banner'
+        name: 'Banner',
+        components: {
+            CommonGallary
+        }
     }
 </script>
 <style lang="stylus" scoped>
