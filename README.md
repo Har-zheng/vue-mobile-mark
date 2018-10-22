@@ -1,21 +1,21 @@
 # vue_learning
 
-## Project setup
+## 安装依赖包
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 启动项目
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 打包项目
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### 文件和修复文件
 ```
 npm run lint
 ```
