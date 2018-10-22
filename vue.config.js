@@ -3,7 +3,7 @@ const Citydata = require('./static/city/city.json')
 
 module.exports={
   devServer: {
-    port:8080,
+    port:8088,
     before(app){
       app.get('/static/mock',(req,res,next)=>{
         res.json(mockdata);
