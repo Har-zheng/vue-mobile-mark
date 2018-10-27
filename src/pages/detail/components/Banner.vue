@@ -1,13 +1,13 @@
 <template>
 <div>   
-  <div class="banner">
+    <div class="banner" @click="handleBannerClick()">
         <img class="banner-img" src="http://img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_600x330_8572a930.jpg" alt="">
         <div class="banner-info">
             <div class="banner-title">上海迪士尼乐园</div>
             <div class="banner-number banner-icon"><span class="iconfont">&#xe631;</span>视屏</div>
         </div>
     </div>
-    <common-gallary></common-gallary>
+    <common-gallary :imgs="imgs" v-show="showGallary" @close="handleGallaryClick"></common-gallary>
 </div>
   
 </template>
@@ -15,8 +15,27 @@
 import CommonGallary from '../../../common/gallary/Gallary'
     export default {
         name: 'Banner',
+        data () {
+            
+            return {
+                showGallary: false,
+                imgs: ['http://img1.qunarzz.com/qs/1809/f6/18a4edd3d78d1102.jpg'
+                ]
+            }
+        },
         components: {
             CommonGallary
+        },
+        methods: {
+            handleBannerClick () {
+                console.log(this.showGallary)
+                    this.showGallary = true;
+                    console.log(this.showGallary)
+            },
+            handleGallaryClick () {
+                    this.showGallary = false;
+            }
+
         }
     }
 </script>
