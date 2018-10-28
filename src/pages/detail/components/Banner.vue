@@ -1,14 +1,17 @@
 <template>
 <div>   
   <div class="banner" @click="handBannerClick">
-        <img class="banner-img" src="http://img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_600x330_8572a930.jpg" alt="">
+        <img class="banner-img" :src="bannerImg" alt="">
         <div class="banner-info">
-            <div class="banner-title">上海迪士尼乐园</div>
-            <div class="banner-number banner-icon"><span class="iconfont">&#xe631;</span>视屏</div>
+            <div class="banner-title">{{ sightName }}</div>
+            <div class="banner-number banner-icon">
+                <span class="iconfont">&#xe631;</span>视屏
+                {{this.gallaryImgs.length}}
+                </div>
         </div>
     </div>
     <fade-anmiation>
-        <common-gallary :imgs="imgs" v-show="gallaryshow" @close="handGallaryClick"></common-gallary>
+        <common-gallary :imgs="gallaryImgs" v-show="gallaryshow" @close="handGallaryClick"></common-gallary>
     </fade-anmiation>
 </div>
 </template>
@@ -17,10 +20,14 @@ import CommonGallary from '../../../common/gallary/Gallary'
 import FadeAnmiation from '../../../common/fade/fade'
   export default {
         name: 'Banner',
+        props: {
+            sightName: String,
+            bannerImg: String,
+            gallaryImgs: Array
+        },
         data () {
             return {
-                gallaryshow: false,
-                imgs: ['http://img1.qunarzz.com/sight/p0/1507/36/ce3d2d6c9ab44d67ae68d940b8781829.water.jpg_r_800x800_7462ee3a.jpg']
+                gallaryshow: false
             }
         },
         components: {

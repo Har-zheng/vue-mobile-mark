@@ -474,6 +474,8 @@ Vue.prototype.bus = new Vue();  //  给Vue实例 绑定 Bus模式
 
 #### 详情页动态路由及banner布局
 
+####  实现一个递归组件
+
 
   + git pull 更新
   + git checkout 分支名 //切换到分支

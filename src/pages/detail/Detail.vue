@@ -1,7 +1,12 @@
 <template>
     <div>    
         <detail-header></detail-header>
-        <detail-banner></detail-banner>
+        <detail-banner 
+        :sightName="sightName"
+         :bannerImg="bannerImg"
+         :gallaryImgs="gallaryImgs"
+         ></detail-banner>
+        <detail-list :List="list"></detail-list>
         <div class="content"></div>
     </div>
 </template>
@@ -9,20 +14,46 @@
 import Bscroll from 'better-scroll'
 import  DetailBanner from './components/Banner';
 import DetailHeader from './components/Header';
+import DetailList from './components/List';
+import axios from 'axios'
     export default {
         name: 'Detail',
+        data () {
+            return {
+                sightName: '',
+                bannerImg: '',
+                gallaryImgs: [],
+                list: []
+            }
+
+        },
         components: {
             DetailBanner,
-            DetailHeader
-        },
-        watch: {
-            // const element = this.$refs[detall][0],
-            // this.scroll.scrollToElement(element)
+            DetailHeader,
+            DetailList
         },
         mounted () {
-            // this.scroll.scrollToElement(element);
-            // this.scroll = new Bscroll(this.$refs.detall,{ mouseWheel: true, click: true, tap: true })
-            
+            this.geDetailInfo();
+        },
+        methods: {
+            geDetailInfo () {
+                axios.get('/static/mock/detall',
+                {params:{
+                    id: this.$route.params.id}}).then(this.handleGetDataSucc)
+                .catch(function(error) {
+                    console.log(error)
+                })
+            },
+            handleGetDataSucc ( res ) {
+                res = res.data
+                if(res.ret && res.data) {
+                    const data = res.data
+                    this.sightName = data.sightName;
+                    this.bannerImg = data.bannerImg;
+                    this.gallaryImgs = data.gallaryImgs;
+                    this.list = data.categoryList;
+                }
+            }
         }
     }
 </script>
