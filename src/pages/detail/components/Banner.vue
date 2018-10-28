@@ -1,41 +1,40 @@
 <template>
 <div>   
-    <div class="banner" @click="handleBannerClick()">
+  <div class="banner" @click="handBannerClick">
         <img class="banner-img" src="http://img1.qunarzz.com/sight/p0/1607/7c/7cda8b6782dabd80b4.img.jpg_600x330_8572a930.jpg" alt="">
         <div class="banner-info">
             <div class="banner-title">上海迪士尼乐园</div>
             <div class="banner-number banner-icon"><span class="iconfont">&#xe631;</span>视屏</div>
         </div>
     </div>
-    <common-gallary :imgs="imgs" v-show="showGallary" @close="handleGallaryClick"></common-gallary>
+    <fade-anmiation>
+        <common-gallary :imgs="imgs" v-show="gallaryshow" @close="handGallaryClick"></common-gallary>
+    </fade-anmiation>
 </div>
-  
 </template>
 <script>
 import CommonGallary from '../../../common/gallary/Gallary'
-    export default {
+import FadeAnmiation from '../../../common/fade/fade'
+  export default {
         name: 'Banner',
         data () {
-            
             return {
-                showGallary: false,
-                imgs: ['http://img1.qunarzz.com/qs/1809/f6/18a4edd3d78d1102.jpg'
-                ]
+                gallaryshow: false,
+                imgs: ['http://img1.qunarzz.com/sight/p0/1507/36/ce3d2d6c9ab44d67ae68d940b8781829.water.jpg_r_800x800_7462ee3a.jpg']
             }
         },
         components: {
-            CommonGallary
+            CommonGallary,
+            FadeAnmiation
         },
         methods: {
-            handleBannerClick () {
-                console.log(this.showGallary)
-                    this.showGallary = true;
-                    console.log(this.showGallary)
+            handBannerClick () {
+                this.gallaryshow = true;
             },
-            handleGallaryClick () {
-                    this.showGallary = false;
+            handGallaryClick () {
+                console.log('123')
+                this.gallaryshow = false;
             }
-
         }
     }
 </script>

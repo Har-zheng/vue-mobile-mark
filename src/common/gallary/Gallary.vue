@@ -41,7 +41,8 @@
         },
         methods: {
             handleGallaryClick () {
-                this.$emit('close')
+                // console.log('123')
+                this.$emit('close');
             }
         }
     }
